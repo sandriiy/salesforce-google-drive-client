@@ -1,0 +1,17 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="title" type="String" label="Title" description="The title of the component."/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="myString" type="String" default="jsMetaValue"></property>
+            <property name="backgroundColor" type="Color" default="#ff00ff"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

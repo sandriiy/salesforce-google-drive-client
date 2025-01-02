@@ -1,0 +1,5 @@
+.gcds-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: var(--slds-g-sizing-border-1) solid var(--slds-s-container-color-border);
+}

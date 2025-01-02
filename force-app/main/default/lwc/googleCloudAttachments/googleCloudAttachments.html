@@ -1,0 +1,49 @@
+<template>
+    <div class="slds-card slds-card_boundary">
+        <div class="slds-grid slds-page-header gcds-header">
+            <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                <div class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <div class="slds-m-right_small stencil slds-avatar slds-avatar_small">
+                            <div style="background-color: #939393">
+                                <lightning-icon icon-name="utility:file" size="small" alternative-text="Notes & Attachments"></lightning-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <a href="#" class="slds-card__header-link">
+                                <span title="Notes & Attachments" class="slds-truncate slds-m-right--xx-small">Notes & Attachments</span>
+                                <span title={records.length} class="slds-shrink-none slds-m-right--xx-small">({records.length})</span>
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+                <div class="slds-no-flex">
+                    <lightning-button label="Upload Files" variant="neutral"></lightning-button>
+                </div>
+            </header>
+        </div>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-wrap">
+                <template for:each={records} for:item="record">
+                    <div key={record.id} class="slds-col slds-size_1-of-2 slds-p-around_small">
+                        <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                            <a href={record.link} class="slds-truncate" title={record.name}>{record.name}</a>
+                            <span class="slds-truncate">{record.size} • {record.type}</span>
+                        </div>
+                        <div class="slds-text-body_small slds-truncate">
+                            {record.date}
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <a href="#">
+            <div class="slds-card__footer">
+                <span class="view-all-label">View All</span>
+            </div>
+        </a>
+    </div>
+</template>
